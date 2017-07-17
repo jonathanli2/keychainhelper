@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-7h-dFd">
+                                <rect key="frame" x="0.0" y="192" width="375" height="431"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">This application is used to dump or delete keychain items (key, certificate, and identity) for debugging purpose.  To use the tool, change the project capability settings to share the keychain with the application to be tested, and signing both application with the same apple developer account.   </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key/CertFileName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-ja-TbI">
+                                <rect key="frame" x="16" y="63" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value/CertPassword" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-Eu-W2s">
+                                <rect key="frame" x="17" y="122" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-xH-0VA">
+                                <rect key="frame" x="179" y="64" width="174" height="21"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oqk-ze-cpX">
+                                <rect key="frame" x="179" y="120" width="174" height="21"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nCx-8h-gdf">
+                                <rect key="frame" x="244" y="92" width="109" height="21"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-LV-Eg1">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Stb-p4-bg8"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="CleanLog" id="HDz-TV-Swv">
+                                        <connections>
+                                            <action selector="onClearLog:" destination="BYZ-38-t0r" id="rHi-lX-6eB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUG-Ei-Aw8">
+                                <rect key="frame" x="0.0" y="148" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="U09-nu-DTO"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="evr-DM-YBk"/>
+                                    <barButtonItem title="importCert" id="4oj-bn-gDE">
+                                        <connections>
+                                            <action selector="onImportCert:" destination="BYZ-38-t0r" id="WKx-n4-ppP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zQn-Kz-cu8"/>
+                                    <barButtonItem title="DeleteCerts" id="KZX-Vs-25g">
+                                        <connections>
+                                            <action selector="onResetCerts:" destination="BYZ-38-t0r" id="8EQ-lN-7Zr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p0v-1t-d9Y"/>
+                                    <barButtonItem title="ResetAll" id="eAS-LZ-xvC">
+                                        <connections>
+                                            <action selector="onResetAllItems:" destination="BYZ-38-t0r" id="JCg-AB-Ejh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KZ1-wI-PbQ"/>
+                                    <barButtonItem title="DumpCerts" id="oWZ-FD-Koc">
+                                        <connections>
+                                            <action selector="onDumpCerts:" destination="BYZ-38-t0r" id="f4L-QA-YOe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Rh-rt-qHN"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37l-wU-vlF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nuq-Cx-FGm"/>
+                                    <barButtonItem title="Add" id="xSg-wS-Qga">
+                                        <connections>
+                                            <action selector="onAdd:" destination="BYZ-38-t0r" id="eyC-3o-Jdn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="th4-i6-3IN"/>
+                                    <barButtonItem title="Update" width="71.5" id="KSK-QC-7dz">
+                                        <connections>
+                                            <action selector="onUpdate:" destination="BYZ-38-t0r" id="rap-Pn-QRb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yKQ-m2-i6V"/>
+                                    <barButtonItem title="Delete " id="AQs-XT-oEw">
+                                        <connections>
+                                            <action selector="onDelete:" destination="BYZ-38-t0r" id="PhP-bm-9so"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DNa-9R-Sw0"/>
+                                    <barButtonItem title="Read" id="RVW-FM-SuD">
+                                        <connections>
+                                            <action selector="onRead:" destination="BYZ-38-t0r" id="Ix9-Sw-1iH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AMl-cW-jIi"/>
+                                    <barButtonItem title="ResetAll" id="VIz-mT-87o"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="beW-ze-Dpw"/>
+                                    <barButtonItem title="DumpAll" id="HjN-Cp-k0v">
+                                        <connections>
+                                            <action selector="onDumpAll:" destination="BYZ-38-t0r" id="5Gr-p2-93Q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dkA-79-4nP"/>
+                                </items>
+                            </toolbar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LbB-Jp-r3M">
+                                <rect key="frame" x="186" y="87" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Access Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQq-qc-37L">
+                                <rect key="frame" x="17" y="93" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="top" secondItem="oqk-ze-cpX" secondAttribute="bottom" constant="7" id="1ce-jY-QGQ"/>
+                            <constraint firstItem="cQj-7h-dFd" firstAttribute="bottom" secondItem="BoN-LV-Eg1" secondAttribute="top" id="2Ah-vT-rwQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BaO-ja-TbI" secondAttribute="leading" id="37M-mC-Yuu"/>
+                            <constraint firstAttribute="trailing" secondItem="BoN-LV-Eg1" secondAttribute="trailing" id="48e-eI-AZ8"/>
+                            <constraint firstItem="37l-wU-vlF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4JY-7Y-sg4"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="bottom" secondItem="cQj-7h-dFd" secondAttribute="top" id="8Fa-xe-cul"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="leading" secondItem="cQj-7h-dFd" secondAttribute="leading" id="9IT-ZG-huj"/>
+                            <constraint firstItem="nCx-8h-gdf" firstAttribute="top" secondItem="PWh-xH-0VA" secondAttribute="bottom" constant="7" id="9v6-En-0wn"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="leading" secondItem="nCx-8h-gdf" secondAttribute="leading" constant="-65" id="BG1-bw-Q0r"/>
+                            <constraint firstItem="nCx-8h-gdf" firstAttribute="leading" secondItem="LbB-Jp-r3M" secondAttribute="trailing" constant="9" id="CO3-ta-qmC"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="trailing" secondItem="cQj-7h-dFd" secondAttribute="trailing" id="Eg5-Py-Jja"/>
+                            <constraint firstItem="dQq-qc-37L" firstAttribute="leading" secondItem="EWY-Eu-W2s" secondAttribute="leading" id="G2S-W1-RXe"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="leading" secondItem="EWY-Eu-W2s" secondAttribute="trailing" constant="2" id="G5i-Kj-axs"/>
+                            <constraint firstItem="BoN-LV-Eg1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KMg-Dg-HlB"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="trailing" secondItem="PWh-xH-0VA" secondAttribute="trailing" id="LaT-PH-UmK"/>
+                            <constraint firstItem="dQq-qc-37L" firstAttribute="top" secondItem="BaO-ja-TbI" secondAttribute="bottom" constant="9" id="LsM-eB-olv"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="trailing" secondItem="BoN-LV-Eg1" secondAttribute="trailing" id="MTl-Do-xQY"/>
+                            <constraint firstItem="PWh-xH-0VA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="163" id="N8P-jU-hbl"/>
+                            <constraint firstItem="BaO-ja-TbI" firstAttribute="top" secondItem="PWh-xH-0VA" secondAttribute="top" constant="-1" id="Og5-ad-vKk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PWh-xH-0VA" secondAttribute="trailing" constant="6" id="Ri5-7d-0Dz"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="120" id="TAI-d2-gJr"/>
+                            <constraint firstItem="PWh-xH-0VA" firstAttribute="leading" secondItem="37l-wU-vlF" secondAttribute="trailing" constant="-196" id="Ucg-Af-1od"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="top" secondItem="nCx-8h-gdf" secondAttribute="bottom" constant="7" id="VT2-8v-UlO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oqk-ze-cpX" secondAttribute="trailing" constant="6" id="WtT-Ew-Rjf"/>
+                            <constraint firstItem="LbB-Jp-r3M" firstAttribute="centerY" secondItem="nCx-8h-gdf" secondAttribute="centerY" id="XoN-07-3bD"/>
+                            <constraint firstItem="LbB-Jp-r3M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="170" id="ZFG-nC-Y99"/>
+                            <constraint firstItem="dQq-qc-37L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="amw-Wo-2g5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BaO-ja-TbI" secondAttribute="leading" id="gQY-te-T0n"/>
+                            <constraint firstItem="37l-wU-vlF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gsE-ig-58f"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="leading" secondItem="BoN-LV-Eg1" secondAttribute="leading" id="h0m-1w-AgD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nCx-8h-gdf" secondAttribute="trailing" constant="6" id="kFr-YB-Won"/>
+                            <constraint firstAttribute="trailing" secondItem="37l-wU-vlF" secondAttribute="trailing" id="ou7-Uu-NJN"/>
+                            <constraint firstItem="oqk-ze-cpX" firstAttribute="baseline" secondItem="EWY-Eu-W2s" secondAttribute="baseline" constant="-3" id="ul5-6S-8FX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BoN-LV-Eg1" secondAttribute="bottom" id="wN1-Zp-3Pm"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="leading" secondItem="37l-wU-vlF" secondAttribute="leading" id="xZN-dg-tB2"/>
+                            <constraint firstItem="YUG-Ei-Aw8" firstAttribute="trailing" secondItem="37l-wU-vlF" secondAttribute="trailing" id="yTf-UX-Cnb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="KeyOrCertFileName" destination="PWh-xH-0VA" id="l2X-R0-2mC"/>
+                        <outlet property="ValueOrCertFilePassword" destination="oqk-ze-cpX" id="hSg-IO-DKW"/>
+                        <outlet property="accessGroupEnabled" destination="LbB-Jp-r3M" id="BdG-SX-iXX"/>
+                        <outlet property="accessGroupName" destination="nCx-8h-gdf" id="PkF-uM-fCp"/>
+                        <outlet property="certLabel" destination="PWh-xH-0VA" id="wuA-Cm-dhX"/>
+                        <outlet property="txtOutput" destination="cQj-7h-dFd" id="uIG-7Z-FPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336.80000000000001" y="400.74962518740631"/>
+        </scene>
+    </scenes>
+</document>
